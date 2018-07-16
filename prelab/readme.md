@@ -28,12 +28,12 @@ For this first step in the prelab, you will learn how to deploy an Azure Virtual
 
 5. Click on the **Create** button at the bottom of the screen
 
-6. Fill out the following fields on the Basic blade
+6. Fill out the following fields on the Basics blade
     - Fill in the Name field with a unique hostname
-    - Leave VM disk type to SSD
+    - Leave VM disk type as SSD
     - Type in a Username
     - Choose Authentication Type of Password
-    - Type in and Confirm a password that meets requirements. **IMPORTANT: This password will be used to login to the Linux VM. It is all the root password which you will use with the sudo command in the labs. So secure and save this password.**
+    - Type in and Confirm a password that meets requirements. **IMPORTANT: This password will be used to login to the Linux VM. It is the root password which you will use with the sudo command in the labs. So secure and save this password.**
     - Leave AAD Disabled
     - Choose your Subscription
     - Type in a new Resource Group name or select an existing one you have already created
@@ -47,10 +47,10 @@ For this first step in the prelab, you will learn how to deploy an Azure Virtual
     - Click on **Select** when you have chosen your size
 
 8. Fill out the following fields on the Settings blade
-    - Leave Availability set to None
-    - Leave Managed Disks to Yes
-    - Leave all Network fields to default
-    - Leave Network Security Group to Basic
+    - Leave Availability zone set to None
+    - Leave Managed Disks as Yes
+    - Leave all Network fields as default
+    - Leave Network Security Group as Basic
     - Select SSH (22) and MS SQL (1433) for public inbound ports
     - Note: You are exposing your VM and SQL Server to a public port. To provide less exposure you can configure your VM after it is deployed to only allow specific IP addresses from your client computer to access the VM or SQL Server. Or if you choose to use an Azure VM as a client you do not have to choose this option provided you have setup your Azure VM as a client to access the Linux VM (such as placing the client Azure VM in the same virtual network)
     - Leave all other fields with default settings
@@ -92,7 +92,7 @@ For this first step in the prelab, you will learn how to deploy an Azure Virtual
 
 ### Windows Client
 
-**Note: The first step of this part of the lab is install software to be able to connect with ssh to your Linux Server. This lab instructs you how to use the popular tool MobaXterm. You are free to use any ssh client you like. However, if you already have a preferred ssh client installed, be sure you update to the latest version. One option that may be interesting is the Azure Cloud Shell at <https://shell.azure.com>**
+**Note: The first step of this part of the lab is to install software to be able to connect with ssh to your Linux Server. This lab instructs you how to use the popular tool MobaXterm. You are free to use any ssh client you like. However, if you already have a preferred ssh client installed, be sure you update to the latest version. One option that may be interesting is the Azure Cloud Shell at <https://shell.azure.com>**
 
 1. Install the MobaXterm client application from <https://mobaxterm.mobatek.net/download-home-edition.html>
 
@@ -120,7 +120,7 @@ For this first step in the prelab, you will learn how to deploy an Azure Virtual
 
 ### Windows Client
 
-`Note`: If you have any issues connecting with ssh to your Azure VM, be sure to have installed the latest version of your ssh client such as MobaXterm (<https://mobaxterm.mobatek.net/download.html>), Bitvise (<https://www.bitvise.com>), or whatever ssh client you are using on Windows.
+`Note`: If you have any issues connecting with ssh to your Azure VM, be sure you have installed the latest version of your ssh client such as MobaXterm (<https://mobaxterm.mobatek.net/download.html>), Bitvise (<https://www.bitvise.com>), or whatever ssh client you are using on Windows.
 
 You will need the **Linux Login** and the password you saved from the Azure VM Deployment section above in the prelab.
 
@@ -143,7 +143,7 @@ Note: Remove any previous installations of Docker from your RHEL image by execut
 
 `sudo yum remove docker docker-common docker-selinux docker-engine`
 
-1. From your ssh prompt, update all existing packages and application by running this command (enter the password you used to connect with ssh when prompted). This could take several minutes to update.
+1. From your ssh prompt, update all existing packages and applications by running this command (enter the password you used to connect with ssh when prompted). This could take several minutes to update.
 
     `sudo yum -y update`
 
@@ -154,7 +154,7 @@ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
-yum install http://mirror.centos.org/centos/7/extras/x86_64/Packages/pigz-2.3.3-1.el7.centos.x86_64.rpm
+sudo yum install http://mirror.centos.org/centos/7/extras/x86_64/Packages/pigz-2.3.3-1.el7.centos.x86_64.rpm
 
 sudo yum install docker-ce
  ```
